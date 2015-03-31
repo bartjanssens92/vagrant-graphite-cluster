@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
+
+  config.ssh.insert_key = false
   config.vm.box = "vStone/centos-6.x-puppet.3.x"
   config.vm.box_check_update = true
 
