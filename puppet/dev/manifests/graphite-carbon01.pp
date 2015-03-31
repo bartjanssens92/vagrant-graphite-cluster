@@ -3,4 +3,5 @@ node 'graphite-carbon01' {
     message => "Node ${::hostname} is alive!",
   }
 
+  include ::graphite::carbon
 }
