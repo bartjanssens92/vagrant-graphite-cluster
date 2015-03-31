@@ -24,9 +24,22 @@ Vagrant.configure(2) do |config|
     # puppet.options = "--verbose --debug"
   end
 
-  config.vm.define "graphite-web" do |gw|
-    gw.vm.hostname = "graphite-web"
-    gw.vm.network "forwarded_port", guest: 80, host: 8081
-    #gw.vm.network "private_network", ip: "192.168.1.101"
+  config.vm.define "graphite-web01" do |gweb01|
+    gweb01.vm.hostname = "graphite-web01"
+    gweb01.vm.network "forwarded_port", guest: 80, host: 8081
+    #gweb01.vm.network "private_network", ip: "192.168.1.101"
   end
+
+  config.vm.define "graphite-carbon01" do |gcar01|
+    gcar01.vm.hostname = "graphite-carbon01"
+    gcar01.vm.network "forwarded_port", guest: 80, host: 8082
+    #gcar01.vm.network "private_network", ip: "192.168.1.102"
+  end
+
+  config.vm.define "graphite-whisper01" do |gwis01|
+    gwis01.vm.hostname = "graphite-whisper01"
+    gwis01.vm.network "forwarded_port", guest: 80, host: 8083
+    #gwis01.vm/network "private_network", ip: "192.168.1.103"
+  end
+
 end
