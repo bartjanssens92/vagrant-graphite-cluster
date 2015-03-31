@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "puppet/hiera_data", "/etc/hiera"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifymv", :id, "--usb", "off"]
+    vb.customize ["modifyvm", :id, "--usb", "off"]
     vb.customize ["modifyvm", :id, "--usbehci", "off"]
   end
 
