@@ -5,7 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "vStone/centos-6.x-puppet.3.x"
   config.vm.box_check_update = true
 
-  config.vm.synced_folder "/puppet/hiera_data", "/etc/hiera"
+  config.vm.synced_folder "puppet/hiera_data", "/etc/hiera"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifymv", :id, "--usb", "off"]
