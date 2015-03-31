@@ -10,6 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifymv", :id, "--usb", "off"]
     vb.customize ["modifyvm", :id, "--usbehci", "off"]
+  end
 
   config.vm.provision "puppet" do |puppet|
     env = 'dev'
@@ -19,9 +20,11 @@ Vagrant.configure(2) do |config|
     puppet.modules_path = "puppet/modules"
     puppet.options = "--environment #{env}"
     # puppet.options = "--verbose --debug"
+  end
 
   config.vm.define "graphite-web" do |gw|
     gw.vm.hostname = "graphite-web"
     gw.vm.network "forwarded_port", guest: 80, host: 8081
     #gw.vm.network "private_network", ip: "192.168.1.101"
+  end
 end
