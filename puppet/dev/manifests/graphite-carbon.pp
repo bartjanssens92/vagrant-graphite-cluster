@@ -1,4 +1,4 @@
-node 'graphite-web' {
+node 'graphite-carbon' {
   notify { 'Alive notify':
     message => "Node ${::hostname} is alive!",
   }
