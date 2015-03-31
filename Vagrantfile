@@ -4,9 +4,6 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "vStone/centos-6.x-puppet.3.x"
   config.vm.box_check_update = true
-  config.vm.hostname = "graphite"
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-  # config.vm.network "private_network", ip: "192.168.33.10"
 
   config.vm.synced_folder "/puppet/hiera_data", "/etc/hiera"
 
@@ -23,4 +20,8 @@ Vagrant.configure(2) do |config|
     puppet.options = "--environment #{env}"
     # puppet.options = "--verbose --debug"
 
+  config.vm.define "graphite-web" do |gw|
+    gw.vm.hostname = "graphite-web"
+    gw.vm.network "forwarded_port", guest: 80, host: 8081
+    #gw.vm.network "private_network", ip: "192.168.1.101"
 end
