@@ -14,7 +14,7 @@ stage { 'setup':
 
 yumrepo { 'epel':
   ensure         => present,
-  stage          => 'setup'
+  stage          => 'setup',
   descr          => 'Extra Packages for Enterprise Linux 6 - $basearch',
   mirrorlist     => 'https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=$basearch',
   failovermethod => 'priority',
