@@ -22,6 +22,7 @@ Vagrant.configure(2) do |config|
     puppet.module_path = "puppet/modules"
     puppet.options = "--environment #{env}"
     # puppet.options = "--verbose --debug"
+    # puppet.options = "--graph"
   end
 
   config.vm.define "graphite-web01" do |gweb01|
