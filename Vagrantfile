@@ -27,7 +27,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "graphite-web01" do |gweb01|
     gweb01.vm.hostname = "graphite-web01"
-    gweb01.vm.network "forwarded_port", guest: 80, host: 8081
+    gweb01.vm.network "forwarded_port", guest: 80, host: 8080
     gweb01.vm.network "private_network", ip: "192.168.1.101"
   end
 
@@ -45,7 +45,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "graphite-carbon02" do |gcar01|
     gcar01.vm.hostname = "graphite-carbon02"
-    gcar01.vm.network "forwarded_port", guest: 80, host: 8082
+    gcar01.vm.network "forwarded_port", guest: 80, host: 8084
     gcar01.vm.network "private_network", ip: "192.168.1.104"
   end
 end
