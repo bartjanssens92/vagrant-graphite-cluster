@@ -3,6 +3,6 @@ node 'graphite-relay01' {
     message => "Node ${::hostname} is alive!",
   }
   class { 'graphite::relay':
-    relay_destinations => ['10.0.2.112','10.0.2.114'],
+    relay_destinations => ['192.168.1.102','192.168.1.104'],
   }
 }
