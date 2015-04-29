@@ -25,27 +25,27 @@ Vagrant.configure(2) do |config|
     # puppet.options = "--graph"
   end
 
-  config.vm.define "graphite-web01" do |gweb01|
-    gweb01.vm.hostname = "graphite-web01"
-    gweb01.vm.network "forwarded_port", guest: 80, host: 8080
-    gweb01.vm.network "private_network", ip: "192.168.1.101"
+  config.vm.define "graphite-web" do |node|
+    node.vm.hostname = "graphite-web"
+    node.vm.network "forwarded_port", guest: 80, host: 8080
+    node.vm.network "private_network", ip: "192.168.1.101"
   end
 
-  config.vm.define "graphite-relay01" do |grel01|
-    grel01.vm.hostname = "graphite-relay01"
-    grel01.vm.network "forwarded_port", guest: 80, host: 8083
-    grel01.vm.network "private_network", ip: "192.168.1.103"
+  config.vm.define "graphite-relay" do |node|
+    node.vm.hostname = "graphite-relay"
+    node.vm.network "forwarded_port", guest: 80, host: 8083
+    node.vm.network "private_network", ip: "192.168.1.103"
   end
 
-  config.vm.define "graphite-carbon01" do |gcar01|
-    gcar01.vm.hostname = "graphite-carbon01"
-    gcar01.vm.network "forwarded_port", guest: 80, host: 8082
-    gcar01.vm.network "private_network", ip: "192.168.1.102"
+  config.vm.define "graphite-cache01" do |node|
+    node.vm.hostname = "graphite-cache01"
+    node.vm.network "forwarded_port", guest: 80, host: 8082
+    node.vm.network "private_network", ip: "192.168.1.102"
   end
 
-  config.vm.define "graphite-carbon02" do |gcar01|
-    gcar01.vm.hostname = "graphite-carbon02"
-    gcar01.vm.network "forwarded_port", guest: 80, host: 8084
-    gcar01.vm.network "private_network", ip: "192.168.1.104"
+  config.vm.define "graphite-cache02" do |node|
+    node.vm.hostname = "graphite-cache02"
+    node.vm.network "forwarded_port", guest: 80, host: 8084
+    node.vm.network "private_network", ip: "192.168.1.104"
   end
 end

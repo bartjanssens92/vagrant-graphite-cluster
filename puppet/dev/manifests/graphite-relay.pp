@@ -1,4 +1,4 @@
-node 'graphite-relay01' {
+node 'graphite-relay' {
   notify { 'Alive notify':
     message => "Node ${::hostname} is alive!",
   }
