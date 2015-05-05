@@ -39,7 +39,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "graphite-grafana" do |node|
     node.vm.hostname = "graphite-grafana"
-    node.vm.network "forwarded_port", guest: 80, host: 8085
+    node.vm.network "forwarded_port", guest: 3030, host: 3030
     node.vm.network "private_network", ip: "192.168.1.110"
   end
 
