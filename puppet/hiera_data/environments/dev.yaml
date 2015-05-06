@@ -1,2 +1,8 @@
 ---
-
+graphite_cache_servers:
+  - '192.168.1.102'
+  - '192.168.1.104'
+graphite_web_servers:
+  - '192.168.1.101'
+graphite_relay_servers:
+  - '192.168.1.103'
