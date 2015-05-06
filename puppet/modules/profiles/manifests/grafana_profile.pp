@@ -14,12 +14,5 @@ class profiles::grafana_profile {
   class { 'grafana':
     version        => 'latest',
     install_method => 'package',
-#    datasources    => {
-#      'graphite'   => {
-#        'type'     => 'graphite',
-#        'url'      => 'http://localhost:8080',
-#        'default'  => 'true',
-#      }
-#    }
   }
 }
