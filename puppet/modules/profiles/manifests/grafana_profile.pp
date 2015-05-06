@@ -1,7 +1,7 @@
-# Class: profiles::grafana
+# Class: profiles::grafana_profile
 #
 #
-class profiles::grafana {
+class profiles::grafana_profile {
   yumrepo { 'grafana':
     descr         => 'grafana',
     baseurl       => 'https://packagecloud.io/grafana/stable/el/6/$basearch',
@@ -12,14 +12,14 @@ class profiles::grafana {
   }
 
   class { 'grafana':
-    version        => 'present',
+    version        => 'latest',
     install_method => 'package',
-    datasources    => {
-      'graphite'   => {
-        'type'     => 'graphite',
-        'url'      => 'http://localhost:8080',
-        'default'  => 'true',
-      }
-    }
+#    datasources    => {
+#      'graphite'   => {
+#        'type'     => 'graphite',
+#        'url'      => 'http://localhost:8080',
+#        'default'  => 'true',
+#      }
+#    }
   }
 }

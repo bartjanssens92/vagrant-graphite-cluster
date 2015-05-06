@@ -4,5 +4,5 @@
 class roles::graphite_web {
   include profiles::node_message
   include profiles::graphite_web
-  include profiles::grafana
+  include profiles::grafana_profile
 }
