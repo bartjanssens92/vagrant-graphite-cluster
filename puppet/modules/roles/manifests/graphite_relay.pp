@@ -4,7 +4,7 @@
 #
 #
 class roles::graphite_relay {
-  include profiles::node_message
+  include profiles::base
   include profiles::graphite_relay
 
   package { 'nc':

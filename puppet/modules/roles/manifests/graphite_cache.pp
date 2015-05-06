@@ -4,6 +4,6 @@
 #
 #
 class roles::graphite_cache {
+  include profiles::base
   include profiles::graphite_cache
-  include profiles::node_message
 }

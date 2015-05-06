@@ -2,7 +2,7 @@
 #
 #
 class roles::graphite_web {
-  include profiles::node_message
+  include profiles::base
   include profiles::graphite_web
   include profiles::grafana_profile
 }
