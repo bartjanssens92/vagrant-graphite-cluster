@@ -13,4 +13,8 @@ class setup {
   package { $packages:
     ensure => present,
   }
+
+  service { 'iptables':
+    ensure => stopped,
+  }
 }
