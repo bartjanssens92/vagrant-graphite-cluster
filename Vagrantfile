@@ -4,7 +4,8 @@
 Vagrant.configure(2) do |config|
 
   config.ssh.insert_key = false
-  config.vm.box = "vStone/centos-6.x-puppet.3.x"
+  #config.vm.box = "vStone/centos-6.x-puppet.3.x"
+  config.vm.box = "centos-66-puppet-375"
   config.vm.box_check_update = true
 
   config.vm.synced_folder "puppet/hiera_data", "/etc/hiera"
