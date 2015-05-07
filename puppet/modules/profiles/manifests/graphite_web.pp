@@ -2,7 +2,7 @@
 #
 #
 class profiles::graphite_web {
-  class { 'graphite::web':
+  class { '::graphite::web':
     cluster_servers => hiera('graphite_cache_servers'),
   }
 }

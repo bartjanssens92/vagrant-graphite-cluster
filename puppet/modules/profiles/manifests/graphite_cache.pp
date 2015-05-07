@@ -4,5 +4,5 @@
 #
 #
 class profiles::graphite_cache {
-  include graphite
+  include ::graphite
 }
