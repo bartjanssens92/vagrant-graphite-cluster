@@ -26,13 +26,6 @@ Vagrant.configure(2) do |config|
     # puppet.options = "--graph"
   end
 
-  config.vm.define "graphite-web" do |node|
-    node.vm.hostname = "graphite-web"
-    node.vm.network "forwarded_port", guest: 3000, host: 3000
-    node.vm.network "forwarded_port", guest: 80, host: 8080
-    node.vm.network "private_network", ip: "192.168.1.101"
-  end
-
   config.vm.define "graphite-relay" do |node|
     node.vm.hostname = "graphite-relay"
     node.vm.network "forwarded_port", guest: 80, host: 8083
@@ -50,4 +43,12 @@ Vagrant.configure(2) do |config|
     node.vm.network "forwarded_port", guest: 80, host: 8084
     node.vm.network "private_network", ip: "192.168.1.104"
   end
+
+  config.vm.define "graphite-web" do |node|
+    node.vm.hostname = "graphite-web"
+    node.vm.network "forwarded_port", guest: 3000, host: 3000
+    node.vm.network "forwarded_port", guest: 80, host: 8080
+    node.vm.network "private_network", ip: "192.168.1.101"
+  end
+
 end
