@@ -6,3 +6,5 @@ graphite_web_servers:
   - '192.168.1.101'
 graphite_relay_servers:
   - '192.168.1.103'
+graphite::carbon::carbon_carbon_metric_interval: '1'
+graphite::carbon::relay_carbon_metric_interval: '1'
