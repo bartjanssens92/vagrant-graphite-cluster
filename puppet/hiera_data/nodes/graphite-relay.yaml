@@ -1,2 +1,1 @@
 ---
-graphite::relay::relay_carbon_metric_interval: '1'
