@@ -15,3 +15,6 @@ How to:
 git clone
 git submodule update --init
 vagrant up
+
+On the thinkpad T440s it takes about 15 min to complete the first vagrant up.
+To speed up the process you can first up the graphite-relay, then do the graphite-cache01 and 02 in parallel and as last the graphite-web node.
