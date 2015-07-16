@@ -6,7 +6,7 @@
 	url = https://github.com/puppetlabs/puppetlabs-concat.git
 [submodule "puppet/modules/graphite"]
 	path = puppet/modules/graphite
-	url = ssh://git@redmine.inuits.eu:2223/puppetmaster/modules/graphite.git
+	url = https://github.com/bartjanssens92/puppet-graphite.git
 [submodule "puppet/modules/grafana"]
 	path = puppet/modules/grafana
 	url = https://github.com/bfraser/puppet-grafana.git
